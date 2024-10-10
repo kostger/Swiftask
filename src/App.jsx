@@ -9,7 +9,7 @@ function App() {
     <div className=" z-0 bg-black w-full ">
       <Navbar />
 
-      <div className="bg-white flex items-center justify-evenly w-full h-[700px]">
+      <div className="bg-white flex items-center justify-evenly w-full h-[1000px]">
         <Column title={"Backlog:"} />
         <Column title={"To Do:"} />
         <Column title={"In Review:"} />
