@@ -23,17 +23,14 @@ function Navbar() {
           ☰
         </button>
         <div className={`text-white md:flex ${isOpen ? "block" : "hidden"}`}>
-          <a href="#home" className="px-5 text-white hover:text-orange-500">
+          <a href="/" className="px-5 text-white hover:text-orange-500">
             Home
           </a>
-          <a href="#about" className="px-5 text-white hover:text-orange-500">
+          <a href="/about" className="px-5 text-white hover:text-orange-500">
             About
           </a>
-          <a href="#services" className="px-5 text-white hover:text-orange-500">
-            Services
-          </a>
-          <a href="#contact" className="px-5 text-white hover:text-orange-500">
-            Contact
+          <a href="/profile" className="px-5 text-white hover:text-orange-500">
+            Profile
           </a>
         </div>
       </div>
