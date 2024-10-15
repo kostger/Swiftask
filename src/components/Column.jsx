@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useDrop } from "react-dnd";
 import Task from "./Task";
 import { Link } from "react-router-dom";
 
-function Column({ title, data }) {
+function Column({ title, data, updateTaskStatus }) {
   const [tasks, setTasks] = useState([]);
+
   useEffect(() => {
     if (Array.isArray(data)) {
       setTasks(data);
@@ -12,8 +14,21 @@ function Column({ title, data }) {
     }
   }, [data]);
 
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: "TASK",
+    drop: (item) => updateTaskStatus(item.id, title),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  }));
+
   return (
-    <div className="w-[300px] h-[800px] bg-gray-200 p-10 flex flex-col items-center shadow-2xl border-2 rounded-xl border-orange-400 ">
+    <div
+      ref={drop}
+      className={`w-[300px] h-[800px] bg-gray-200 p-10 flex flex-col items-center shadow-2xl border-2 rounded-xl border-orange-400 ${
+        isOver ? "bg-green-200" : ""
+      }`}
+    >
       <div className="flex w-full justify-between items-center">
         <h3 className="font-bold mb-4 border border-b-orange-600 w-full text-center text-xl">
           {title}

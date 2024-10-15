@@ -4,18 +4,10 @@ import GithubLogo from "../assets/github.png";
 
 function Footer() {
   return (
-    <div className="w-full flex items-center justify-between py-5  bottom-0 bg-black">
-      <div className="flex flex-col justify-center items-center px-20">
-        <img
-          src={SwiftaskLogo}
-          alt="Swiftask Logo"
-          className="w-30 h-10 px-5"
-        />
-        <h1 className="text-white font-bold font-serif text-wrap text-2xl">
-          Seemlesly handle all your tasks.
-        </h1>
+    <footer className="bg-gray-800 text-white py-4 mt-auto">
+      <div className="container mx-auto text-center">
+        <p>&copy; {new Date().getFullYear()} Swiftask. All rights reserved.</p>
       </div>
-
       <div className="text-white flex flex-row justify-center items-center ">
         <img src={GithubLogo} alt="Github Logo" className="w-30 h-10 " />
         <a
@@ -26,7 +18,7 @@ function Footer() {
           Github
         </a>
       </div>
-    </div>
+    </footer>
   );
 }
 

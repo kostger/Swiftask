@@ -6,12 +6,17 @@ function TaskInfo(props) {
   const { dataArray, setDataArray } = useContext(StateContext);
   const taskId = useParams().id;
   const task = dataArray.find((task) => task.id === taskId);
-  console.log(dataArray, taskId);
+
+  const handleDeleteTask = () => {
+    const updatedTasks = dataArray.filter((task) => task.id !== taskId);
+    setDataArray(updatedTasks);
+  };
+
   return (
     <>
       {task && (
         <div className="bg-white flex flex-col items-center justify-center w-full h-[700px]">
-          <div className=" h-[500px] flex flex-col items-center justify-center gap-4 bg-orange-400 rounded-xl border-black border shadow-lg shadow-black">
+          <div className=" min-h-[500px] min-w-[600px] flex flex-col items-center justify-center gap-4 bg-orange-400 rounded-xl border-black border shadow-lg shadow-black">
             <h1 className="text-3xl font-bold mb-4">{task.title}</h1>
             <p className="text-lg text-wrap px-4 flex-wrap">
               {task.description}
@@ -38,12 +43,22 @@ function TaskInfo(props) {
                 <p className="text-lg">{task.createdDate}</p>
               </div>
             </div>
+            <div className="flex w-full justify-center gap-2 items-center">
+              <Link to="/">
+                <button className="bg-neutral-950 text-white w-[100px] h-[50px]">
+                  Back
+                </button>
+              </Link>
+              <Link to="/">
+                <button
+                  onClick={handleDeleteTask}
+                  className="bg-red-600 text-white w-[100px] h-[50px]"
+                >
+                  Delete
+                </button>
+              </Link>
+            </div>
           </div>
-          <Link className="absolute bottom-24" to="/">
-            <button className="bg-neutral-950 text-white w-[100px] h-[50px]">
-              Back
-            </button>
-          </Link>
         </div>
       )}
       {!task && (

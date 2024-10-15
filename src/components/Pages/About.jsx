@@ -10,17 +10,6 @@ function About() {
         Ironhack Web-Development Course. The project is built using React and
         Tailwindcss.
       </p>
-      <h1 className="text-4xl font-bold text-orange-500">Lorem</h1>
-      <p className="text-lg w-6/12">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-        libero mauris, aliquet vitae venenatis at, mattis vitae nulla. Nullam
-        erat mi, sagittis aliquam imperdiet non, bibendum ut turpis. Etiam
-        lobortis mauris odio, vitae blandit eros sollicitudin id. Maecenas
-        tincidunt massa eu metus congue, vel aliquet nisl auctor. Nullam nec
-        mauris id ex auctor blandit id id leo. Donec porttitor, tellus eu
-        pharetra varius, orci est pellentesque mi, sed sollicitudin tortor dui
-        rutrum nibh.
-      </p>
     </div>
   );
 }

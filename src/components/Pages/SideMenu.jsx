@@ -45,7 +45,7 @@ function SideMenu({ addTask }) {
   };
 
   return (
-    <div className="flex flex-col bg-orange-100 border border-gray-500 rounded-xl justify-start gap-6 items-start h-[800px] w-[400px] p-4">
+    <div className="flex flex-col bg-orange-100 border border-gray-500 rounded-xl justify-start gap-6 items-start md:h-[800px] w-[400px] p-4">
       <h1 className="text-4xl font-bold text-center text-black bg-blue-400 rounded-2xl p-4">
         Add a New Task
       </h1>

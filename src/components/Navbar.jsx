@@ -19,10 +19,17 @@ function Navbar() {
           alt="Swiftask Logo"
           className="w-30 h-10 px-5"
         />
-        <button className="text-white md:hidden px-5" onClick={toggleMenu}>
+        <button
+          className="text-white rounded-xl bg-green-400 md:hidden px-5"
+          onClick={toggleMenu}
+        >
           ☰
         </button>
-        <div className={`text-white md:flex ${isOpen ? "block" : "hidden"}`}>
+        <div
+          className={`text-white flex flex-col md:flex-row ${
+            isOpen ? "block" : "hidden"
+          }`}
+        >
           <a href="/" className="px-5 text-white hover:text-orange-500">
             Home
           </a>
