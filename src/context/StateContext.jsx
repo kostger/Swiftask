@@ -7,9 +7,9 @@ export const StateContext = createContext();
 // Create a provider component
 export const StateProvider = ({ children }) => {
   const [dataArray, setDataArray] = useState(() => {
-    // const savedData = localStorage.getItem("dataArray");
-    // return savedData ? JSON.parse(savedData) : kanbanData;
-    return kanbanData;
+    const savedData = localStorage.getItem("dataArray");
+    return savedData ? JSON.parse(savedData) : kanbanData;
+    // return kanbanData;
   });
 
   useEffect(() => {
