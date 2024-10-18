@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SwiftaskLogo from "../assets/swiftask.png";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
